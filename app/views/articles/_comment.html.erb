@@ -1,0 +1,14 @@
+<div>
+  <h4>from: <%= comment.author_name %></h4>
+
+  <% if comment.updated_at == comment.created_at %>
+    <p><span class='smaller'>Comment Posted: <%= comment.created_at %></span></p>
+  <% else %>
+    <p><span class='smaller'>Comment Last Updated: <%= comment.updated_at %></span></p>
+  <% end %>
+  <br />
+  <p class='comment'><%= comment.body %></p>
+  <%= link_to 'edit comment', edit_article_comment_path(comment.article, comment) %> |
+  <%= link_to 'delete comment', article_comment_path(comment.article, comment), method: :delete, data: { confirm: 'Really delete this comment?' } %>
+</div>
+<br />

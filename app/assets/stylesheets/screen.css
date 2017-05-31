@@ -78,10 +78,12 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 .headings, h1 {
     font-family: "Yanone Kaffeesatz", sans
 }
+
 .smaller {
     font-size: .65em;
     font-weight: bold;
 }
+
 html {
     background: #d3dd8a;
     -moz-background-size: 80px 80px;
@@ -290,6 +292,12 @@ h2, h3, h4 {
     font-size: 1.3em;
     line-height: 1.5em;
     margin: .2em 0 .5em
+}
+
+.post {
+    font-family: Georgia, serif;
+    font-size: 1.2em;
+
 }
 
 .comment {
