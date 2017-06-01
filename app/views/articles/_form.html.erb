@@ -16,7 +16,7 @@
     <%= f.label :tag_list %>
     <%= f.text_field :tag_list %>
   </p>
-  <% if @article.image.exists? %>
+  <% if @article.image? %>
     <p>
       <%= image_tag @article.image.url(:medium) %><br />
     </p>
