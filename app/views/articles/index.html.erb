@@ -12,6 +12,4 @@
 <%= link_to 'Create a New Article', new_article_path, class: 'new_article' %>
 <br />
 <%= link_to 'Show all Tags', tags_path %>
-<% if logged_in? %>
-    <%= link_to 'Show all Authors', authors_path %>
-<% end %>
+<%= link_to 'Show all Authors', authors_path %>
