@@ -583,6 +583,9 @@ form label {
     text-transform: uppercase
 }
 
+.link {
+    font-style: italic;
+}
 form textarea {
     height: 12em;
     font-size: 1.1em
