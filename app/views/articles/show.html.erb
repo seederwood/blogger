@@ -1,6 +1,10 @@
 <h1><%= @article.title %></h1>
 <p><span class='smaller'><%= @article.created_at %></span></p><br />
-
+<p>
+  <% if @article.image.exists? %>
+    <%= image_tag @article.image.url(:medium) %><br />
+  <% end %>
+  </p>
 <p class='post'><%= @article.body %></p><br />
 <p>
   <% if @article.tags.any? %>
