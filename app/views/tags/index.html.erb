@@ -1,6 +1,7 @@
 <h1>All Tags</h1>
 
 <ul id='tags'>
+  <% if logged_in? %>
     <% @tags.each do |tag| %>
     <li>
         <%= link_to tag.name, tag_path(tag) %>
@@ -9,6 +10,16 @@
         <%= link_to 'delete', tag_path(tag), method: :delete, data: { confirm: 'Really delete this tag?' } %><br />
     </li>
     <% end %>
+
+  <% else %>
+    <% @tags.each do |tag| %>
+      <li>
+        <%= link_to tag.name, tag_path(tag) %>
+        <span class='smaller'>(<%= tag.articles.size %>)</span>
+      </li>
+    <% end %>
+  <% end %>
+
 </ul>
 <br />
 <%= link_to '<< Back to Artcles List', articles_path %>
