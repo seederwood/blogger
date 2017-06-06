@@ -1,0 +1,4 @@
+<li>
+    <%= link_to article.title, article_path(article) %>
+    <span class='smaller'><%= article.created_at %> | <%= article.comments.count %> comments</span>
+</li>

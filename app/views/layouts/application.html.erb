@@ -10,14 +10,19 @@
 
   <body>
 
+    <nav>
+      <%= render 'shared/nav' %>
+    </nav>
     <p class='flash'><%= flash.notice %></p>
     <div class="container">
+
       <div class="content">
+
         <%= yield %>
         <hr />
         <h6>
           <% if logged_in? %>
-            <%= "Logged in as #{current_user.username}" %> | 
+            <%= "Logged in as #{current_user.username}" %> |
             <%= link_to 'Log Out', logout_path %>
           <% else %>
             <%= link_to 'Log In', login_path %>

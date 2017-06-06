@@ -23,7 +23,7 @@
 <hr />
 <% if @article.comments.any? %>
   <h3>Comments (<%= @article.comments.size %>)</h3>
-  <%= render partial: 'articles/comment', collection: @article.comments.all %>
+  <%= render partial: 'articles/comment', collection: @article.comments.all.reverse %>
 <% end %>
 <%= render partial: 'comments/form' %>
 <%= link_to '<<Back to Articles List', articles_path %>

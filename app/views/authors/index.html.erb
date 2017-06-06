@@ -7,32 +7,12 @@
     <tr>
       <th>Username</th>
       <th>Email</th>
-      <th colspan="3"></th>
+      <th ></th>
     </tr>
   </thead>
 
   <tbody>
-    <% if logged_in? %>
-      <% @authors.each do |author| %>
-        <tr>
-          <td><%= author.username %></td>
-          <td><%= author.email %></td>
-          <td><%= link_to 'Show', author %></td>
-          <% if current_user.username == author.username || current_user.username == 'admin' %>
-            <td>| <%= link_to 'Edit', edit_author_path(author) %> |</td>
-            <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
-        </tr>
-      <% end %>
-    <% else %>
-      <% @authors.each do |author| %>
-        <tr>
-          <td><%= author.username %></td>
-          <td><%= author.email %></td>
-          <td><%= link_to 'Show', author %></td>
-        </tr>
-      <% end %>
-    <% end %>
+    <%= render @authors %>
   </tbody>
 </table>
 

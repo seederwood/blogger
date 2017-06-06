@@ -1,0 +1,17 @@
+<% if logged_in? %>
+    <tr>
+      <td><%= author.username %></td>
+      <td><%= author.email %></td>
+      <td><%= link_to 'Show', author %></td>
+      <% if current_user.username == author.username || current_user.username == 'admin' %>
+        <td>| <%= link_to 'Edit', edit_author_path(author) %> |</td>
+        <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+    </tr>
+<% else %>
+    <tr>
+      <td><%= author.username %></td>
+      <td><%= author.email %></td>
+      <td><%= link_to 'Show', author %></td>
+    </tr>
+<% end %>

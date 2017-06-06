@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :require_login, except: %i[index show]
 
   def index
-    @articles = Article.all
+    @articles = Article.all.reverse
   end
 
   def create
